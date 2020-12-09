@@ -67,6 +67,7 @@ export class Service<R extends Resource = Resource> {
     }
 
     public getClone(id: string, params: IParamsResource = {}): Observable<ClonedResource<R>> {
+        // @ts-ignore
         return this.get(id, params).pipe(
             map((resource: Resource) => {
                 // return resource.clone();
@@ -363,7 +364,7 @@ export class Service<R extends Resource = Resource> {
                         // @todo migrate to dexie
                         Core.injectedServices.JsonapiStoreService.saveCollection(path.getForCache() + '.compact', <
                             ICacheableDataCollection
-                        >success);
+                            >success);
                     }
                 }
                 subject.next(temporary_collection);

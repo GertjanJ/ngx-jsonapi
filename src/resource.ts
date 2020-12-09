@@ -258,8 +258,8 @@ export class Resource implements ICacheable {
     public hasOneRelated(resource: string): boolean {
         return Boolean(
             this.relationships[resource] &&
-                (<Resource>this.relationships[resource].data).type &&
-                (<Resource>this.relationships[resource].data).type !== ''
+            (<Resource>this.relationships[resource].data).type &&
+            (<Resource>this.relationships[resource].data).type !== ''
         );
     }
 
@@ -290,6 +290,7 @@ export class Resource implements ICacheable {
         let subject = new Subject<object>();
         let object = this.toObject(params);
         if (this.id === '') {
+            // @ts-ignore
             delete object.data.id;
         }
 

@@ -15,6 +15,7 @@ export class ClonedResource<T extends Resource> extends Resource implements IClo
         // @note using cloneDeep because the parent may have changed since clone (example: data received from socket while editing clone)
         this.parent = cloneDeep(resource);
         this.type = this.parent.type; // this line should go to fill method?
+        // @ts-ignore
         delete this.relationships; // remove empty relationships object so fill method creates them... how can we improve inheritance to remove this?
         let include = Object.keys(this.parent.relationships);
         this.fill(this.parent.toObject({ include: include }));
