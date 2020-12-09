@@ -9,12 +9,15 @@
     "module": "es2015",
     "moduleResolution": "node",
     "outDir": "../dist/",
-    "paths": { },
+    "paths": {},
     "rootDir": ".",
     "sourceMap": true,
     "inlineSources": true,
     "target": "es2015",
-    "lib": ["es2017", "dom"],
+    "lib": [
+      "es2017",
+      "dom"
+    ],
     "skipLibCheck": true,
     "esModuleInterop": true,
     "strict": false
@@ -23,7 +26,7 @@
     "public_api.ts"
   ],
   "angularCompilerOptions": {
-    "annotateForClosureCompiler": true,
+    "annotateForClosureCompiler": false,
     "strictMetadataEmit": false,
     "flatModuleOutFile": "index.js",
     "flatModuleId": "ngx-jsonapi"
