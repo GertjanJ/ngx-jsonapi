@@ -17,13 +17,21 @@
     "baseUrl": ".",
     "rootDir": "../",
     "paths": {
-      "ngx-jsonapi": [ "../src" ],
-      "ngx-jsonapi/*": [ "../src/*" ]
+      "ngx-jsonapi": [
+        "../src"
+      ],
+      "ngx-jsonapi/*": [
+        "../src/*"
+      ]
     }
   },
   "exclude": [
     "../node_modules",
     "test.ts",
     "**/*.spec.ts"
-  ]
+  ],
+  "angularCompilerOptions": {
+    "enableIvy": true,
+    "allowEmptyCodegenFiles": true
+  }
 }
